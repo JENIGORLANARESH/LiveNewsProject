@@ -8,7 +8,7 @@ const port = 3000;
 
 const API_URL = "https://newsapi.org/v2/everything?q=";
 
-const yourBearerToken = "5e102aefdf8d47f3943f0f53c2f935fa";
+const yourBearerToken = "";//Enter Your API Key from NewsAPI.
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,7 +17,7 @@ app.get("/", async (req, res) => {
  
   try {
     const result = await axios.get(
-      API_URL + `world&sortBy=popularity&apiKey=${yourBearerToken}`
+      API_URL + `headlines&sortBy=popularity&apiKey=${yourBearerToken}`
     );
    
     const page = parseInt(req.query.page) || 1;
