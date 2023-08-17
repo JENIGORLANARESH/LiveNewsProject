@@ -1,0 +1,27 @@
+
+
+.nav-link{
+  color: rgb(97, 97, 97);
+}
+.navbar {
+  background-color: #ececec;
+  height: auto;
+  align-content: center;
+}
+
+header{
+  background-color: white;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+}
+
+.pages{
+  display: flex;
+ justify-content: center;
+ color: black;
+}
+.pagination a{
+  color: black;
+  background-color: rgb(195, 195, 195);
+}
