@@ -171,7 +171,9 @@
           <% } else{%>
           <h2>Home</h2>
           <% } %>
-          <p>( total results: <%= totalArticles %> )</p>
+           <% if(locals.totalArticles){ %>
+            <p>( total results: <%= totalArticles %> )</p>
+            <% } %>
         </div>
 
         <% for (var i = 0; i < articles.length; i++) { %>
