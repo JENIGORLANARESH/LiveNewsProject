@@ -8,7 +8,7 @@ const port = 3000;
 
 const API_URL = "https://newsapi.org/v2/everything?q=";
 
-const yourBearerToken = "";//Enter Your API Key from NewsAPI.
+const yourBearerToken = "5e102aefdf8d47f3943f0f53c2f935fa";//Enter Your API Key from NewsAPI.
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
