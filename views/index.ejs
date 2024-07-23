@@ -25,7 +25,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <div>
     <header class="p-3 mb-1 border-bottom">
       <div class="container">
         <div
@@ -149,8 +149,8 @@
         <a class="nav-link" href="Cricket">Cricket</a>
       </li>
     </ul>
-
-    <div class="container">
+  </div>
+  <div class="container">
       <div class="row g-4 justify-content-between mb-3">
         <div class="heading d-flex align-items-baseline">
           <% if(locals.total){ %>
@@ -158,10 +158,13 @@
           <% } else{%>
           <h2>Home</h2>
           <% } %>
-          <p>( total results: <%= totalArticles %> )</p>
+           <% if(locals.totalArticles){ %>
+            <p>( total results: <%= totalArticles %> )</p>
+            <% } %>
         </div>
 
         <% for (var i = 0; i < articles.length; i++) { %>
+          
         <div class="card" style="width: 18rem">
           <img
             onerror="this.style.display='none'"
@@ -171,6 +174,7 @@
           />
           <div class="card-body">
             <h5 class="card-title"><%= articles[i].title %></h5>
+            
             <p class="card-text"><%= articles[i].description %></p>
             <a href="<%= articles[i].url %>" class="btn btn-primary"
               >Read more</a
@@ -202,6 +206,7 @@
         </div>
       </div>
     </div>
+   
   </body>
 </html>
 

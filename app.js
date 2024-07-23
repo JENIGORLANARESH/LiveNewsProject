@@ -14,7 +14,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req,res) => {
-  const homepage = "TopNews";
+  const homepage = "India";
   res.redirect(`/${homepage}`);
 });
 
@@ -34,11 +34,26 @@ app.get("/:postName", async (req, res) => {
     );
 
     const totalArticles = result.data.totalResults;
-    const totalPages = Math.ceil(totalArticles / articlesPerPage);
+    
+    const filteredArticles = result.data.articles.filter((article) => {
+      return (
+        article.title &&
+        article.title !== "[Removed]" &&
+        article.description &&
+        article.description !== "[Removed]" &&
+        article.source &&
+        article.source.name &&
+        article.source.name !== "[Removed]" &&
+        article.urlToImage !== null
+      );
+    });
+
+
+    const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
     const startIndex = (page - 1) * articlesPerPage;
     const endIndex = startIndex + articlesPerPage;
 
-    const articlesToDisplay = result.data.articles.slice(startIndex, endIndex);
+    const articlesToDisplay = filteredArticles.slice(startIndex, endIndex);
 
     res.render("index.ejs", {
       totalArticles: totalArticles,
