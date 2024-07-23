@@ -16,6 +16,19 @@
     position: sticky;
     top: 0;
   }
+<<<<<<< HEAD
+=======
+}
+
+@media screen and (max-width: 801px) {
+  .fixed{
+   
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    
+  }
+>>>>>>> facb25cf7b0c87b9ea0f3b2ac720f0b4b1f5d989
 }
 
 @media screen and (max-width: 801px) {
