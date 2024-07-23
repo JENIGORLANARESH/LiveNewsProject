@@ -8,18 +8,13 @@ const port = 3000;
 
 const API_URL = "https://newsapi.org/v2/everything?q=";
 
-const yourBearerToken = "5e102aefdf8d47f3943f0f53c2f935fa";//Enter Your API Key from NewsAPI.
+const yourBearerToken = "5e102aefdf8d47f3943f0f53c2f935fa";
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-<<<<<<< HEAD
 app.get("/", (req,res) => {
   const homepage = "India";
-=======
-app.get("/", (req, res) => {
-  const homepage = "TopNews";
->>>>>>> facb25cf7b0c87b9ea0f3b2ac720f0b4b1f5d989
   res.redirect(`/${homepage}`);
 });
 
@@ -27,7 +22,6 @@ app.post("/search", (req, res) => {
   const requestedTitle = req.body["category"];
   res.redirect(`/${requestedTitle}`);
 });
-
 
 app.get("/:postName", async (req, res) => {
   const requestedTitle = _.startCase(req.params.postName);
