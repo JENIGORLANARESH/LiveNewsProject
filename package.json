@@ -1,10 +1,11 @@
 {
   "name": "newsapi-project",
   "version": "1.0.0",
-  "description": "Daily news articals",
+  "description": "Daily news articles",
   "main": "app.js",
   "type": "module",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Naresh",
